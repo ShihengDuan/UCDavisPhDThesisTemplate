@@ -1,0 +1,119 @@
+\input{Layout.tex}
+
+\input{Macros.tex}
+
+%%% environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+
+%%% use lowercase letters for subcaption labeling
+\captionsetup[subfigure]{labelfont=rm}
+
+
+\begin{document}
+
+\numberwithin{figure}{chapter} 
+\numberwithin{table}{chapter}
+\numberwithin{equation}{chapter}
+\numberwithin{section}{chapter}
+
+   \frontmatter
+    
+   \pagestyle{prelim}
+   
+   % Redefine plain page style so that the first pages of chapters
+   % have desired page style.
+   %
+   \fancypagestyle{plain}{%
+      \fancyhf{}
+      \cfoot{\thepage}
+   }%
+   \input{TitlePage.tex}
+   \newpage
+	
+	 %%% (optional) copyright page <== this page is not numbered!
+	 \thispagestyle{empty}
+	 \begin{titlepage}
+	 \vspace*{50em}
+	 \begin{center}
+		 \copyright \ Shiheng Duan, 2022.  All rights reserved.  
+	 \end{center}
+	 \end{titlepage}
+	 \newpage
+	 \stepcounter{page}
+	
+	 %%% (optional) dedication page
+	 %\thispagestyle{plain}
+	 %\vspace*{20em}
+	 %\begin{center}
+	 %  To...
+	 %\end{center}
+	 %\newpage
+   
+   % Begin Double Spacing
+   %
+   \tableofcontents
+   \doublespacing
+   
+   %
+   \newpage
+   
+   \input{Abstract.tex}
+   \newpage
+   
+   \section*{Acknowledgments}
+   \input{Acknowledgments.tex}
+   
+   \mainmatter
+   
+   \pagestyle{maintext}
+   
+   % Redefine plain page style so that the first pages of 
+   % chapters have desired page style.
+   %
+   \fancypagestyle{plain}{%
+      \renewcommand{\headrulewidth}{0.pt}
+      \fancyhf{}
+      % \lhead{Chapter \thechapter}
+      \cfoot{\thepage}%%%
+   }%
+   
+   \chapter{Introduction}
+   \label{ch:IntroductionLabel}
+   \input{Introduction.tex}
+
+   \chapter[% 
+      Whatever you call it in the contents
+   ]{% 
+      This is really the long title. 
+   }%
+   \label{ch:streamflow}
+   \input{chapter2.tex}
+  
+  \chapter[% 
+      title in the contents
+   ]{% 
+      Full title goes here. 
+   }%
+   \label{ch:snowpack}
+   \input{chapter3.tex}
+  
+  \chapter[% 
+      this can be short title
+   ]{% 
+      This is the full title.  
+   }%
+   \label{ch:snowpack}
+   \input{chapter4.tex}
+   
+   \backmatter
+   
+   
+   % Sets bio to SIAM stype format
+   % \bibliographystyle{siam}
+
+   \bibliographystyle{refstyle}
+   \bibliography{ref}
+\end{document}

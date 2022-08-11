@@ -1,0 +1,28 @@
+% Use this file to load additional packages or define macro
+% commands that will be used in the dissertation.
+%
+
+\usepackage{graphicx}
+\usepackage{caption} %%% optional but probably necessary
+\usepackage{subcaption} %%% optional but probably necessary
+\usepackage{amsmath}
+\usepackage[round]{natbib}
+\usepackage{adjustbox}
+\renewcommand\bibname{Reference}
+
+\allowdisplaybreaks
+
+\usepackage{titlesec}
+\titleformat{\chapter}[hang] 
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{} 
+\titlespacing{\chapter}
+{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{} 
+\titlespacing{\section}
+{0pt}{1.5ex plus 1ex minus .2ex}{1.3ex plus .2ex}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{} 
+
